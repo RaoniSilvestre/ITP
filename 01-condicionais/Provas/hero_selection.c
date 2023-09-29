@@ -120,7 +120,7 @@ int main()
         }
         break;
     case 5:
-        if (heroClass == 5 && heroQntd>=1)
+        if (heroClass == 5 && heroQntd >= 1)
         {
             printf("Heróis vencerão!");
         }
