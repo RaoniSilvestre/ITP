@@ -28,8 +28,9 @@ int main()
             }
         }
     }
-    for (int i = 0; i < cont/2; i++) {
-         printf("%d ", dupes[i]);
+    for (int i = 0; i < cont / 2; i++)
+    {
+        printf("%d ", dupes[i]);
     }
 
     return 0;

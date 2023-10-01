@@ -26,16 +26,16 @@ int main()
                 diagPRIN = diagPRIN + matriz[i][j];
             }
 
-            if ((i + j) == (tam -1))
+            if ((i + j) == (tam - 1))
             {
-                diagSEC = diagSEC+ matriz[i][j];
+                diagSEC = diagSEC + matriz[i][j];
             }
         }
     }
 
     sumDiags = diagPRIN + diagSEC;
- 
-    printf("soma: %d\ndiagprin: %d\ndiagSec: %d", sumDiags,diagPRIN,diagSEC);
+
+    printf("soma: %d\ndiagprin: %d\ndiagSec: %d", sumDiags, diagPRIN, diagSEC);
 
     return 0;
 }
