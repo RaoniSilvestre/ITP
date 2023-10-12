@@ -20,7 +20,7 @@ void criptografar(char *mensagem, int cifra)
 
   int shift;
   int index;
-  for (int i = 0; i < strlen(mensagem); i++)
+  for (int i = 0; i < strlen(mensagem)-1; i++)
   {
     for (int j = 0; j < 40; j++)
     {
@@ -65,8 +65,7 @@ int main()
   int criptografia;
   scanf("%d", &criptografia);
 
-  while (getchar() != '\n')
-    ;
+  while (getchar() != '\n');
 
   char mensagem[250];
   fgets(mensagem, 249, stdin);
