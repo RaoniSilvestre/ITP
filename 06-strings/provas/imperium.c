@@ -85,7 +85,7 @@ void decifrarMensagem(char *inputMessage, int criptKey)
     printf("0");
   if (criptKey < 10)
     printf("0");
-  printf("%d\n%s", criptKey, inputMessage);
+  printf("%04d\n%s", criptKey, inputMessage);
 }
 
 int main()
