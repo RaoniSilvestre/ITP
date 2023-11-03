@@ -16,6 +16,7 @@ int cadastraSmartphone(int qnt_cadastrada, struct Smartphone phones[]) {
 	scanf("%f", &phones[qnt_cadastrada].processador);
 	scanf("%f", &phones[qnt_cadastrada].camera);
 	scanf("%f", &phones[qnt_cadastrada].bateria);
+  
 	return ++qnt_cadastrada;
 }
 
