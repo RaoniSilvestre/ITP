@@ -1,0 +1,143 @@
+input:
+
+ACATACATACAG
+ACAG
+
+ACCATATACGTAGTACAG
+GTAGTA
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void patternSearch(char *DNA, char *pattern)
+{
+  int N = 0, M = 0;
+  N = strlen(DNA);
+  M = strlen(pattern);
+
+  for (int i = 0; i <= N - M; i++)
+  {
+    int j;
+    for (j = 0; j < M; j++)
+    {
+      if (DNA[i + j] != pattern[j])
+      {
+        printf("%c não \n", DNA[i + j]);
+        i = i + j;
+        break;
+      }
+      else
+      {
+        if (j + 1 == M - 1)
+        {
+          printf("%c sim", DNA[i + j]);
+        }
+        else
+        {
+          printf("%c ", DNA[i + j]);
+        }
+      }
+    }
+    if (j == M)
+      printf("Achei o padrão no índice %d \n", i);
+  }
+}
+
+int main()
+{
+  // INPUT
+  char DNA[150];
+  fgets(DNA, 149, stdin);
+
+  char pattern[100];
+  fgets(pattern, 99, stdin);
+
+  int N = strlen(DNA);
+  int M = strlen(pattern);
+
+  patternSearch(DNA, pattern);
+
+  return 0;
+}
+
+
+-----------
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void patternSearch(char *DNA, char *pattern)
+{
+  int N = strlen(DNA);
+  int M = strlen(pattern);
+  int found = 0;
+  for (int i = 0; i <= N - M; i++)
+  {
+    int j;
+    for (j = 0; j < M; j++)
+    {
+      printf("%c ", DNA[i + j]);
+
+      if (DNA[i + j] != pattern[j])
+      {
+        printf("não\n");
+        if (DNA[i + j] == 'T')
+        {
+          i = i + j;
+        }
+        break;
+      }
+      else if (j == M - 1)
+      {
+        printf("sim\n");
+        found = 1;
+      }
+    }
+
+    if (j == M)
+    {
+      printf("Achei o padrão no índice %d \n", i);
+      break;
+    }
+  }
+
+  if (!found)
+    printf("Não achei o padrão\n");
+}
+
+int main()
+{
+  char DNA[150];
+  fgets(DNA, 149, stdin);
+  DNA[strcspn(DNA, "\n")] = 0;
+
+  char pattern[100];
+  fgets(pattern, 99, stdin);
+  pattern[strcspn(pattern, "\n")] = 0;
+
+  patternSearch(DNA, pattern);
+
+  return 0;
+}
+
+
+0
+5
+ote
+ante
+ismo
+por
+ite
+contradizer
+antivirus
+velhote
+antipatia
+retroceder
+tolerante
+realismo
+bronquite
+justapor
+gastrite
+-1
