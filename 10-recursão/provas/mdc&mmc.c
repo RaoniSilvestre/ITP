@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
   scanf("%d", &a);
   scanf("%d", &b);
   int mdc = calcMDC(a, b);
-  int mmc = (a*b)/mdc;
+  int mmc = (a * b) / mdc;
   printf("MDC = %d, MMC = %d", mdc, mmc);
   return 0;
 }
